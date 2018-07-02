@@ -1,6 +1,4 @@
 #include <iostream>
-#include "sqlite3.h"
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -11,6 +9,7 @@ class User{
 			char *email;
 			int id;
 			int flat;
+			User(){};
 		public:	
 			void Login();
 			bool isLogin();
@@ -19,9 +18,9 @@ class User{
 			void Mess();
 			void Detail();
 			void SendMess();
-			void AddFriend(int);
-        	void ShowFriend(int);
-        	void BlockFriend(int);
+			void AddFriend();
+        	void ShowFriend();
+        	void BlockFriend();
 			
 };
 

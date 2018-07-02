@@ -1,5 +1,6 @@
 #include<iostream>
 #include "User.cpp"
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -41,7 +42,7 @@ int main(){
 				break;
 			}
 			case 5:{
-			
+				u.Detail();
 				break;
 			}
 			case 6:{
@@ -49,11 +50,11 @@ int main(){
 				break;
 			}
 			case 7:{
-				
+				u.AddFriend();
 				break;
 			}
 			case 8:{
-				
+				u.ShowFriend();
 				break;
 			}
 			case 9:{
