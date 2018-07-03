@@ -64,22 +64,20 @@ void User::SendMess(){
     cout<<"Send messenger!"<<endl;
 	if(isLogin()){
 		int id;
-		char *mess;
-		char *fr;
+		char mess[100];
+		char fr[10];
 		char *dt;
-		fr = new char;
-		mess = new char;
 		dt = new char;
-		
+		fflush(stdin);
 		cout<<"Choose your friend: ";
-		cin>> fr;	
+		cin.getline(fr,10);	
 		for(int j = 0; j < i; j+=2){
         if(a[j].compare(fr) == 0){
         	
             cout << "Messenger: \n";
             sfile<<"Messenger to "<<fr<<": ";
-            cin>>mess;
-			sfile<<mess<<"\t ++detail++";
+            cin.getline(mess,100);
+			sfile<<mess<<"\t ++detail++ \t";
         	time_t hientai = time(0);
         	dt = ctime(&hientai);
         	sfile<<dt;
@@ -113,9 +111,10 @@ void User::Detail(){
 void User::AddFriend(){
 	if(isLogin()){
 		fstream add("ListFriend.txt",ios::app);
-		string name;
+		char name[10];
+		fflush(stdin);
 		cout<<"Enter your new friend: ";
-		cin>>name;
+		cin.getline(name,10);
 		add<<name<<"\n";
 		cout<<name;
 		add.close();
